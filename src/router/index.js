@@ -1,22 +1,57 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '@/views/v1/Home.vue'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+
+const About=()=>import('@/views/v1/About.vue');
+const BuyToday=()=>import('@/views/v1/BuyToday.vue');
+const Commodity=()=>import('@/views/v1/Commodity.vue');
+const Details=()=>import('@/views/v1/Details.vue');
+const Information=()=>import('@/views/v1/Information.vue');
+const Login=()=>import('@/views/v1/Login.vue');
+const ShopCart=()=>import('@/views/v1/ShopCart.vue');
 
 const routes = [
   {
-    path: '/',
+    path: 'v1/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/about',
+    path: 'v1/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: About
+  },
+  {
+    path: 'v1/BuyToday',
+    name: 'BuyToday',
+    component: BuyToday
+  },
+  {
+    path: 'v1/Commodity',
+    name: 'Commodity',
+    component: Commodity
+  },
+  {
+    path: 'v1/Details',
+    name: 'Details',
+    component: Details
+  },
+  {
+    path: 'v1/Information',
+    name: 'Information',
+    component: Information
+  },
+  {
+    path: 'v1/Login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: 'v1/ShopCart',
+    name: 'ShopCart',
+    component: ShopCart
   }
 ]
 
